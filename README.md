@@ -3,12 +3,20 @@
 `lnch` uses `fzf` to fuzzy find applications to run, `cd` into a fuzzy found directory, or opening a fuzzy found file in a default application with `rifle`.
 
 ## Usage
-In a Terminal, run  `lnch`:
+In a Terminal, run `lnch`:
 ```
 $ lnch
 ```
+to open a file.
 
-Or use your window manager, desktop environment or `sxhkd` to map a keybinding to `$ $TERMINAL lnch`
+To run a program:
+
+```
+$ lnch r
+```
+
+Use your window manager, desktop environment or `sxhkd` to map a keybinding to `$ $TERMINAL lnch`
+
 
 You can also just use:
 ```

@@ -2,25 +2,16 @@
 
 # lnch -- fuzzy launcher, directory switcher and file opener
 
-# mode="$(echo "r\\nf" | fzf -0 --prompt="run (r) or open file/dir (f) ? (r/o)? ")"
-
 if [ "$1" = "r" ]; then
   echo "$(print -rC1 -- $commands)" | fzf | xargs detach;
 else
-  # echo "$(find $HOME -type f )" | fzf | xargs rifle;
   file="$(find $HOME 2> /dev/null | fzf )"
     if [ -d "$file" ]; then
-      # OPTIONAL: ALSO CHANGE WORKING DIRECTORY
       cd "$file"
       pwd
       tree -L 1
-      # ranger
     else
-      # OPTIONAL: ALSO CHANGE WORKING DIRECTORY
-      # cd "$(dirname "$file")"
-      # pwd
-      $FILE --selectfile "$file"
-      detach rifle "$file"
+      rifle "$file"
     fi
 fi
 
