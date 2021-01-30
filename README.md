@@ -1,5 +1,7 @@
 # 🚀 lnch -- fuzzy launcher, directory switcher and file opener
 
+![demo](demo.gif)
+
 `lnch` uses `fzf` to fuzzy find applications to run, `cd` into a fuzzy found directory, or opening a fuzzy found file in a default application with `rifle`.
 
 ## Usage
