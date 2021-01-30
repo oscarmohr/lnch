@@ -1,0 +1,24 @@
+package main
+
+import (
+	"log"
+	"os"
+	"os/exec"
+	"syscall"
+)
+
+func main() {
+	if len(os.Args) <= 1 {
+    os.Exit(1)
+  }
+
+	cmd := exec.Command(os.Args[1], os.Args[2:]...)
+
+	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+
+	err := cmd.Start()
+
+	if err != nil {
+    log.Fatal(err)
+  }
+}
