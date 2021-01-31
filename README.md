@@ -20,7 +20,15 @@ $ lnch r
 Use your window manager, desktop environment or `sxhkd` to map a keybinding to `$ $TERMINAL lnch`
 
 
-You can also just use:
+Use `zsh` builtins to map a keybinding like `ctrl`+`f` to `lnch` and `ctrl`+`r` to `lnch r`:
+```zsh
+# zsh configuration file: $XDG_CONFIG_HOME/zsh/.zshrc
+bindkey -s '^f' 'lnch\n'    # ctrl+f
+bindkey -s '^r' 'lnch r\n'  # ctrl+r 
+```
+
+
+Additionally you can also just use:
 ```
 $ detach program
 ```
